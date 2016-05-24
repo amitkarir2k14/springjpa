@@ -4,21 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
 
 import app.pojos.Spittle;
 import app.repository.SpittleCreator;
 import app.repository.SpittleRepository;
-
 @Repository
 public class SpittleRepositoryImpl implements SpittleCreator {
 
-	@Autowired
-	private SpittleRepository spittleRepo;
 	
 	@Override
 	public List<Spittle> spittles() {

@@ -36,19 +36,15 @@ public class RootConfig {
 		return ds;
 	}
 
-	@Bean
-	public NamedParameterJdbcTemplate jdbcTemplate(DataSource dataSource) {
-		return new NamedParameterJdbcTemplate(dataSource);
-	}
 	
-	@Bean
+	/*@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 	 OpenJpaVendorAdapter adapter = new OpenJpaVendorAdapter();
 	  adapter.setDatabase(Database.MYSQL);
 	  adapter.setShowSql(true);
 	  adapter.setGenerateDdl(false);
 	  return adapter;
-	}
+	}*/
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,

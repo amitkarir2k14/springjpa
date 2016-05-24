@@ -40,9 +40,9 @@ public class SpitterController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String save(@Valid Spitter spitter, Errors errors) {
 		if(errors.hasErrors())
-			return "/register";
+			return "redirect:/spitter/register";
 		repo.save(spitter);
-		return "redirect:/spitter/register/" + spitter.getUsername();
+		return "redirect:/spitter/register" + spitter.getUsername();
 	}
 
 }

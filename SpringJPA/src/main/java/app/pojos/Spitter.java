@@ -7,13 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
 
-@Component
+
 @Entity
+@Table(name="Spitter")
 public class Spitter {
 
 	@NotNull
@@ -31,7 +33,6 @@ public class Spitter {
 	@NotNull
 	@Column(name="password")
 	private String password;
-	@NotNull
 	@Column(name="picPath")
 	private String profilePicPath;
 	@Column(name="registerDate")
