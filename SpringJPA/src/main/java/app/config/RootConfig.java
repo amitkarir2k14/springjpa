@@ -1,5 +1,7 @@
 package app.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -33,9 +35,15 @@ public class RootConfig {
 		ds.setUrl("jdbc:mysql://localhost:3306/amit");
 		ds.setUsername("root");
 		ds.setPassword("root");
+		
+		
 		return ds;
 	}
-
+	public Properties additionalProperties() {
+	      Properties properties = new Properties();
+	      properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+	      return properties;
+	   }
 	
 	/*@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
@@ -53,6 +61,7 @@ public class RootConfig {
 		emfb.setDataSource(dataSource);
 		emfb.setJpaVendorAdapter(jpaVendorAdapter);
 		emfb.setPackagesToScan("app.pojos");
+		emfb.setJpaProperties(additionalProperties());
 		return emfb;
 	}
 	
